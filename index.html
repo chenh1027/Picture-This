@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Picture This!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header class="header">
+      <div class="title">
+        <h1>Picture This!</h1>
+        <h4>My Really Cool Blog Post</h4>
+      </div>
+      <picture>
+        <!-- image displayed is landscape for smaller than 960px -->
+        <source
+          srcset="
+            images/landscape/museum-320px.jpg,
+            images/landscape/museum-640px.jpg 2x,
+            images/landscape/museum-960px.jpg 3x
+          "
+          media="(max-width: 320px)"
+        />
 
-<body>
-  <header class="header">
-    <div class="title">
-      <h1>Picture This!</h1>
-      <h4>My Really Cool Blog Post</h4>
-    </div>
-    <img src="images/museum.jpg" alt="placeholder">
+        <source
+          srcset="
+            images/landscape/museum-640px.jpg,
+            images/landscape/museum-960px.jpg  2x,
+            images/landscape/museum-1440px.jpg 3x
+          "
+          media="(max-width: 480px)"
+        />
 
-  </header>
-</body>
+        <source
+          srcset="
+            images/landscape/museum-720px.jpg,
+            images/landscape/museum-1440px.jpg 2x,
+            images/landscape/museum-2160px.jpg 3x
+          "
+          media="(max-width: 720px)"
+        />
 
+        <source
+          srcset="
+            images/landscape/museum-960px.jpg,
+            images/landscape/museum-1920px.jpg 2x,
+            images/landscape/museum-2880px.jpg 3x
+          "
+          media="(max-width: 960px)"
+        />
+
+        <!-- image displayed is square for 960px or larger -->
+        <source
+          srcset="
+            images/square/museum-800x800.jpg,
+            images/square/museum-1660x1660.jpg 2x,
+            images/square/museum-2400x2400.jpg 3x
+          "
+          media="(min-width: 1660px)"
+        />
+
+        <source
+          srcset="
+            images/square/museum-640x640.jpg,
+            images/square/museum-1280x1280.jpg 2x,
+            images/square/museum-1920x1920.jpg 3x
+          "
+          media="(min-width: 1280px)"
+        />
+
+        <source
+          srcset="
+            images/square/museum-480x480.jpg,
+            images/square/museum-960x960.jpg   2x,
+            images/square/museum-1440x1440.jpg 3x
+          "
+          media="(min-width: 959px)"
+        />
+
+        <img
+          src="images/museum.jpg"
+          alt="An art gallery showcasing many paintings"
+        />
+      </picture>
+    </header>
+  </body>
 </html>
